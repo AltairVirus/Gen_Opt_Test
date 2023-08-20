@@ -5,10 +5,12 @@ LABEL "creator"="ZAUR"
 
 WORKDIR ./usr/tests
 
-COPY . .
+COPY requirements.txt .
+
+RUN pip3 install -r requirements.txt
 
 RUN apk update && apk upgrade && apk add bash
 
-RUN pip3 install -r requirements.txt
+COPY . .
 
 CMD pytest -s -v APITests/*
