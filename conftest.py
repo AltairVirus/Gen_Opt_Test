@@ -7,8 +7,10 @@ logging.basicConfig(level=logging.ERROR,
                     datefmt='%I:%M:%S %p')
 
 # сохраняем историю падений в разрезе имен классов и индексов в параметризации (если она используется)
-_test_failed_incremental: dict[str, dict[tuple[int, ...], str]] = {}
+_test_failed_incremental: dict = {}
 
+
+##dict[str, dict[tuple[int, ...], str]] = {} -- Билд не проходит
 
 def pytest_runtest_makereport(item, call):
     if "incremental" in item.keywords:
