@@ -7,6 +7,9 @@ class TestGenOpt:
 
     @pytest.mark.full_scenery
     def test_create_model_group(self, client):
+        """
+        Create group of models with GraphQL endpoint
+        """
         request = Ms.GroupOfModelRequest(client.group)
         response = client.post_gql_request(query=request.query, variables=request.variables)
         response.assert_status_code(200).validate(Ms.GroupOfModelResponse)
