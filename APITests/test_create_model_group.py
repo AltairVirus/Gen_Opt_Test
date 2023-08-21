@@ -24,8 +24,8 @@ class TestGenOpt:
     @pytest.mark.full_scenery
     def test_upload_tr(self, client):
         request = Ms.UploadTRRequest(client.group)
-        file = open("../02_Ц1_ТР_НЕФТЯНЫХ_НА_ФЕВРАЛЬ_2022г на печать (2) (2).xlsx", "rb").read()
-        response = client.upload_file(file=file, params=request.params)
+        file = open("02_Ц1_ТР_НЕФТЯНЫХ_НА_ФЕВРАЛЬ_2022г на печать (2) (2).xlsx", "rb")
+        response = client.upload_file(file=file, params=request.params, data=request.form_data)
         response.assert_status_code(200).validate(Ms.ModelResponse)
         # response = client.post_gql_request(query=Ms.GroupOfModelRequest.query, variables=Ms.GroupOfModelRequest.variables)
         # response_obj = Response(response)
