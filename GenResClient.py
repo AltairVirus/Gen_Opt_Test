@@ -26,9 +26,11 @@ class GenResClient:
                                                     'Accept-Encoding': 'gzip, deflate',
                                                     'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7',
                                                     'Connection': 'keep-alive',
-                                                    'Cookie': '__ddg1_=InDiKq0JWbCKJLnozBS5'
+                                                    'Cookie': '__ddg1_=InDiKq0JWbCKJLnozBS5',
+                                                    'Host': 'genrestest.nntc.pro',
+                                                    'Origin': 'http://genrestest.nntc.pro'
                                                     }},
                            json=data,
                            params=params,
-                           files={'file': file})
+                           files={'file': ("filename", file)})
         return Response(response)

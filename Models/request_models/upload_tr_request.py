@@ -14,10 +14,9 @@ class UploadTRRequest:
             'userCorrections': f'{group.MODEL.UC.id}'
         }
         delimiter = '-------------123456789'
-        file = File("02_Ц1_ТР_НЕФТЯНЫХ_НА_ФЕВРАЛЬ_2022г на печать (2) (2).xlsx",
+        file = File("05_Ц1_ТР_НЕФТЯНЫХ_НА_МАЙ_2023г без пароля [N92oDN].xlsx",
                     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'Content file')
         post = BodyPost.get({'file': file}, delimiter)
-        print(len(post))
         self.form_data = post
 
 
