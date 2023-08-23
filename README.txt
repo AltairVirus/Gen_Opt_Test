@@ -4,7 +4,7 @@ UPDATE PIP:
 INSTALL NEW LIB:
     pip3 install "libname"
 
-UPDATE LIS OF NECESSARY LIBS:
+UPDATE LIST OF NECESSARY LIBS:
     pip3 freeze > requirements.txt
 
 PYTEST:
@@ -16,9 +16,9 @@ CREATE ALLURE REPORT:
 DOCKER:
     docker build -t "imagename" --no-cache=True .
     docker image ls
-    docker run "imagename"
+    docker run --name "containerName" "imagename"
 
-#HOW TO PUSH TO DOCKER_HUB YOUR IMAGE
+#HOW TO PUSH YOUR IMAGE TO DOCKER_HUB
 1) docker logout
 2) docker build -t "imagename" --no-cache=True .
 3) docker tag "imagename" altairvirus/nntc_1:"imagename"
