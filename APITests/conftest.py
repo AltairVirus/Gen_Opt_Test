@@ -1,7 +1,6 @@
 import pytest
 import logging
 from GenResClient import GenResClient
-import configuration as conf
 import Models as Ms
 import os
 

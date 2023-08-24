@@ -1,14 +1,11 @@
 FROM python:3.7-alpine
 
-ARG BASE_URL="http://genrestest.nntc.pro"
-ENV BASE_URL=$BASE_URL
+ENV BASE_URL="http://genrestest.nntc.pro"
 
 LABEL "test_scenery"="APITests"
 LABEL "creator"="ZAUR"
 
 WORKDIR ./usr/tests
-
-VOLUME /allureResults
 
 COPY requirements.txt .
 
@@ -18,5 +15,5 @@ RUN apk update && apk upgrade && apk add bash
 
 COPY . .
 
-CMD pytest -s -v APITests --alluredir=AllureReport
+CMD pytest -s -v APITests --alluredir=allureResults
 
