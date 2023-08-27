@@ -1,8 +1,8 @@
 import pytest
 import logging
 from GenResClient import GenResClient
-import configuration as conf
 import Models as Ms
+import os
 
 
 @pytest.hookimpl(hookwrapper=True, trylast=True)
@@ -16,7 +16,7 @@ def pytest_runtest_makereport(item):
 
 @pytest.fixture(scope='function', autouse=False)
 def client(request):
-    session = GenResClient(conf.BASE_URL)
+    session = GenResClient(os.environ['BASE_URL'])
     logging.info(f"Access token : {session.auth['Authorization']}")
     session.group = Ms.GroupOfModelStatic
     logging.info(f"Group Model : {session.group.__dict__}")
