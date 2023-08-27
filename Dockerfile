@@ -15,5 +15,5 @@ RUN apk update && apk upgrade && apk add bash
 
 COPY . .
 
-CMD pytest -s -v APITests --alluredir=allureResults
+CMD pytest -s -v APITests --alluredir=AllureReport
 
