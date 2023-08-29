@@ -1,0 +1,11 @@
+
+stage:
+    - test
+
+
+test run:
+    stage: test
+    script:
+        - docker -t image-test --no-cache .
+        - docker run --rm --name test -v data:/usr/tests/AllureReport image-test
+    when: manual
