@@ -6,5 +6,5 @@ test run:
     stage: test
     script:
         - docker build -t image-test --no-cache .
-        - docker run --rm --name test -v data:/usr/tests/AllureReport image-test
+        - docker run --rm --name test -v data:/usr/tests/AllureReport image-test:latest
     when: manual
