@@ -6,7 +6,7 @@ stages:
 build image:
     stage: build
     script:
-        - docker build -t image-test:latest --no-cache=True.
+        - docker build -t image-test:latest --no-cache=True .
     when: manual
 
 test run:
