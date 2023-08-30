@@ -17,7 +17,7 @@ test run:
         - docker run --name test 
                      --rm  
                      -e BASE_URL=$BASE_URL
-                     -v /samba/allaccess/allure-result:/usr/tests/AllureReport image-test:$CI_COMMIT_SHORT_SHA
+                     -v /samba/allaccess/allure-result:/usr/tests/AllureResult image-test:$CI_COMMIT_SHORT_SHA
     after_script:
         - docker rmi image-test:$CI_COMMIT_SHORT_SHA
     allow_failure: true
