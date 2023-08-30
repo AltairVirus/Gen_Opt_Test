@@ -14,7 +14,9 @@ test run:
     needs: 
         - build image
     script:
-        - docker run --rm --name test -v /samba/allaccess/allure-result:/usr/tests/AllureReport image-test:$CI_COMMIT_SHORT_SHA
+        - docker run --name test 
+                     --rm  
+                     -v /samba/allaccess/allure-result:/usr/tests/AllureReport image-test:$CI_COMMIT_SHORT_SHA
     after_script:
         - docker rmi image-test:$CI_COMMIT_SHORT_SHA
     allow_failure: true
