@@ -11,7 +11,8 @@ build image:
 
 test run:
     stage: test
-    needs: build image
+    needs: 
+        - build image
     script:
         - docker run --rm --name test -v data:/usr/tests/AllureReport image-test:$CI_COMMIT_SHORT_SHA
     after_script:
@@ -21,6 +22,8 @@ test run:
 
 create report:
     stage: report
+    needs: 
+        - test run   
     script:
         - echo "report has been created"
     when: manual
