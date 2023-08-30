@@ -27,6 +27,8 @@ test run:
 
 create report:
     stage: report
+    before_script:
+        - apk update && apk add curl curl-dev bash
     needs: 
         - test run   
     script:
