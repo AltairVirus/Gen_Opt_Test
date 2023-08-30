@@ -27,7 +27,7 @@ test run:
 create report:
     stage: report
     before_script:
-        - apt add --no-cache --upgrade bash
+        - apt upgrade
     needs: 
         - test run   
     script:
