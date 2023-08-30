@@ -32,5 +32,5 @@ create report:
     needs: 
         - test run   
     script:
-        - curl "http://100.111.13.215:5050/allure-docker-service/generate-report"
+        - curl "http://100.111.13.215:5050/generate-report"
 
