@@ -6,7 +6,7 @@ stages:
 build image:
     stage: build
     script:
-        - docker build -t image-test:$CI_COMMIT_SHORT_SHA --no-cache .
+        - docker build -t image-test:$CI_COMMIT_SHORT_SHA --no-cache=True .
     when: manual
 
 test run:
