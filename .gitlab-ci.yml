@@ -6,7 +6,7 @@ stages:
 build image:
     stage: build
     script:
-        - docker build -t image-test:$CI_PROJECT_ID .#--no-cache=True .
+        - docker build -t image-test:1 .#--no-cache=True .
 
 test run:
     stage: test
@@ -19,9 +19,9 @@ test run:
                      --rm  
                      -e BASE_URL=$BASE_URL
                      -v /samba/allaccess/allure-result:/usr/tests/AllureResult 
-                     image-test:$CI_PROJECT_ID
+                     image-test:1
     after_script:
-        - docker rmi image-test:$CI_PROJECT_ID
+        - docker rmi image-test:1
     allow_failure: true
 
 
