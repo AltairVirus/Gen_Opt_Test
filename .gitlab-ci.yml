@@ -6,7 +6,7 @@ stages:
 build image:
     stage: build
     script:
-        - docker build -t image-test:$CI_JOB_STARTED_AT --no-cache=True .
+        - docker build -t image-test:$GITLAB_USER_NAME --no-cache=True .
 
 test run:
     stage: test
@@ -19,9 +19,9 @@ test run:
                      --rm  
                      -e BASE_URL=$BASE_URL
                      -v /samba/allaccess/allure-result:/usr/tests/AllureResult 
-                     image-test:$CI_JOB_STARTED_AT
+                     image-test:$GITLAB_USER_NAME
     after_script:
-        - docker rmi image-test:$CI_JOB_STARTED_AT
+        - docker rmi image-test:$GITLAB_USER_NAME
     allow_failure: true
 
 
