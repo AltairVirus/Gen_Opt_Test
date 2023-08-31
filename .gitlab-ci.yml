@@ -6,7 +6,7 @@ stages:
 build image:
     stage: build
     script:
-        - docker build -t image-test:1 . 
+        - docker build -t image-test:$CI_COMMIT_SHORT_SHA . 
 #--no-cache=True .
 
 test run:
@@ -20,9 +20,9 @@ test run:
                      --rm  
                      -e BASE_URL=$BASE_URL
                      -v /samba/allaccess/allure-result:/usr/tests/AllureResult 
-                     image-test:1
+                     image-test:$CI_COMMIT_SHORT_SHA
     after_script:
-        - docker rmi image-test:1
+        - docker rmi image-test:$CI_COMMIT_SHORT_SHA
     allow_failure: true
 
 
