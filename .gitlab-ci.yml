@@ -15,7 +15,6 @@ test run:
         - build image
     script:
         - rm -rf /samba/allaccess/allure-result/*
-        - sleep 5
         - docker run --name test 
                      --rm  
                      -e BASE_URL=$BASE_URL
