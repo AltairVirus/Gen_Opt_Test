@@ -20,7 +20,7 @@ test run:
                      --rm  
                      -e BASE_URL=$BASE_URL
                      -v /samba/allaccess/allure-result:/usr/tests/AllureResult 
-                     -d image-test:1
+                     image-test:1
     after_script:
         - docker rmi image-test:1
     allow_failure: true
