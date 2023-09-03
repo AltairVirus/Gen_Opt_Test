@@ -35,3 +35,12 @@ create report:
         - sleep 20
         - curl "http://100.111.13.215:5050/generate-report"
 
+pages:
+    stage: report
+    needs: create report
+    artifacts:
+        paths:
+             -v /samba/allaccess/allure-report
+    rules:
+        - when: always
+            
