@@ -37,10 +37,12 @@ create report:
 
 pages:
     stage: report
-    needs: create report
+    script:
+        - mkdir public 
+        - mv /samba/allaccess/allure-report/* public
     artifacts:
         paths:
-             -v /samba/allaccess/allure-report
+             - public
     rules:
         - when: always
             
