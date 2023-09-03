@@ -32,6 +32,6 @@ create report:
     needs: 
         - test run   
     script:
-        - sleep 5
+        - sleep 20
         - curl "http://100.111.13.215:5050/generate-report"
 
