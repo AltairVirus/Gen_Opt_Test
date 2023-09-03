@@ -34,15 +34,3 @@ create report:
     script:
         - sleep 20
         - curl "http://100.111.13.215:5050/generate-report"
-
-pages:
-    stage: report
-    script:
-        - mkdir public 
-        - mv /samba/allaccess/allure-report/* public
-    artifacts:
-        paths:
-             - public
-    rules:
-        - when: always
-            
