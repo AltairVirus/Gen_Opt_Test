@@ -72,7 +72,7 @@ docker run -e VAR_VAR=123455                                            - run wi
 docker volume create <NEW VOLUME>                                       -create volume in /var/lib/docker/volumes
 docker volume rm <VOLUME NAME>                                          -delete volume in docker
 
-                           docker run --rm -v data:/usr/tests/allureResults IMAGE
+                           docker run --rm -v data:/usr/tests/AllureReport IMAGE
 
 netstat -a                                                              -running ports
 docker network ls                                                       -types of networks
@@ -90,6 +90,8 @@ docker network connect <NAMES>/<NETWORK ID>  <NAMES>/<CONTAINER ID>     -connect
                                         # CI / CD
 
 docker compose up (-d)
+chown -R :gitlab-runner allaccess - назначить владельца файла
+chmod 777 allaccess/scripts/ - дать всем права на файл
 
 
 
@@ -101,10 +103,10 @@ docker compose up (-d)
              ## To see network interfaces -> sudo ifconfig
 2) Create USER and PASSWORD
              ## sudo -i -> password to root user. After all -> exit and exit
-3) Install Docker
+3) Install Docker and Git
 4) Install SSH
 5) Deactivate sleep. target
-6) Ask DevOps make static IP for host machine
-7) Create #External switch in Hyper-V
-
+6) Create #External switch in Hyper-V
+7) Ask DevOps make static IP for host machine (described at note)
+8) Create Sharing Folder, mount....
 
